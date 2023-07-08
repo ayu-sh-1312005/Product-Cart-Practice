@@ -27,7 +27,7 @@ function Header() {
             <span onClick={()=> navigate("/cart")} className='relative'>
               <FaShoppingCart />
               {cartLength!=0 &&
-              <div className='absolute text-xs text-center h-4 w-4 rounded-full duration-150 animate-bounce font-bold -right-1 -top-1  bg-red-600 '>
+              <div className='absolute text-xs text-center h-4 w-4 rounded-full duration-150 animate-bounce font-bold -right-1 -top-1  bg-green-600 '>
                 {cartLength}
               </div>
               }

@@ -32,7 +32,7 @@ function Home() {
 
   return (
     <Link to="/">
-      <div className='flex flex-wrap max-w-[1080px] min-h-screen justify-between mx-auto gap-y-6 py-6 shadow-md '>
+      <div className='flex flex-wrap max-w-[1080px] min-h-screen justify-between mx-auto gap-y-6 py-6 '>
         {loading ? 
         (<Spinner />):
         (products.length>0 ? 

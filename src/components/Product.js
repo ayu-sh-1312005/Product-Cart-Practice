@@ -26,7 +26,7 @@ function Product({title,price,description, image,id}) {
 
 
   return (
-    <div className='flex flex-col justify-around w-60 bg-white items-center mx-auto rounded-lg shadow-2xl border-2 text-justify p-2 duration-200 transform transition hover:-translate-y-4'>
+    <div className='flex flex-col justify-around w-60 bg-white items-center mx-auto rounded-lg  border-2 text-justify p-2 duration-200 transform transition hover:scale-110 gap-y-1 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]'>
         <p className='font-bold'>{title.length>20 ? (title.slice(0,20)+"..."):(title)}</p>
         <p className='text-xs'>{(description.length>100) ? (description.slice(0,50)+"..."):(description) }</p>
         <img width={100} src={image} alt="" />
