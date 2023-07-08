@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { add,remove } from '../redux/slices/CartSlice';
 
-import {toast} from 'react-toastify';
+import {toast} from 'react-hot-toast';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -20,7 +20,7 @@ function Product({title,price,description, image,id}) {
 
   function removeFromCart(){
     dispatch(remove(id));
-    toast.success('Item removed from card');
+    toast.error('Item removed from cart');
     console.log(cart);
   }
 

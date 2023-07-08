@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import {MdDelete} from "react-icons/md"
 import { useDispatch,useSelector } from 'react-redux';
 import { remove } from '../redux/slices/CartSlice';
+import { toast } from 'react-hot-toast';
 
 function CartItem({title,price,description, image,id}) {
 
@@ -11,9 +12,10 @@ function CartItem({title,price,description, image,id}) {
   const dispatch=useDispatch();
 
   function handleClick(){
-    console.log("id: ",id)
+    console.log("id: ",id);
     dispatch(remove(id));
     console.log(cardId);
+    toast.error('Item removed from cart');
   }
 
   return (
@@ -26,8 +28,8 @@ function CartItem({title,price,description, image,id}) {
             <p className='text-xs'>{description.length>80 ? (description.slice(0,80)+"..."):(description)}</p>
             <div className='flex justify-between text-xl'>
                 <div className='text-green-500 font-bold'>${price}</div>
-                <div className='rounded-full bg-red-100 hover:bg-red-300 duration-100 text-red-700 grid items-center text-2xl p-2'>
-                    <MdDelete onClick={handleClick} />
+                <div onClick={handleClick} className='rounded-full bg-red-100 hover:bg-red-300 duration-100 text-red-700 grid items-center text-2xl p-2'>
+                    <MdDelete />
                 </div>
             </div>
         </div>
